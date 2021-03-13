@@ -22,7 +22,7 @@ before the next comment block.
 */
 
 // PLACE YOUR CODE BELOW
-
+wordList = words.map(w => w.slice(1, 3)).join(', ')
 // PLACE YOUR CODE ABOVE
 
 /*

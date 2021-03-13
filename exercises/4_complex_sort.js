@@ -16,20 +16,31 @@
  */
 
 let widgets = [
-  {name:'Thingamabob', sortKey: 3},
-  {name:'Bip', sortKey: 9},
-  {name:'Thingamajig', sortKey: '3'},
-  {name:'Whatchamacallit', sortKey: '9'},
-  {name:'Bop', sortKey: 0},
-  {name:'Whatsit', sortKey: '2'},
-  {name:'Thingy', sortKey: 7},
-  {name:'Doohickey', sortKey: '5'},
-  {name:'Doodad', sortKey: 2},
+  { name: 'Thingamabob', sortKey: 3 },
+  { name: 'Bip', sortKey: 9 },
+  { name: 'Thingamajig', sortKey: '3' },
+  { name: 'Whatchamacallit', sortKey: '9' },
+  { name: 'Bop', sortKey: 0 },
+  { name: 'Whatsit', sortKey: '2' },
+  { name: 'Thingy', sortKey: 7 },
+  { name: 'Doohickey', sortKey: '5' },
+  { name: 'Doodad', sortKey: 2 },
 ]
 
 function specialSort(el1, el2) {
   // PLACE YOUR CODE BELOW
+  const comp = (n1, n2) => n1 - n2
 
+  const k1 = el1.sortKey
+  const k2 = el2.sortKey
+
+  if (typeof k1 === typeof k2) {
+    return typeof k1 === 'string' ? -(comp(k1, k2)) : (comp(k1, k2))
+  } else if (typeof k1 === 'string') {
+    return -1
+  }
+
+  return 1
   // PLACE YOUR CODE ABOVE
 }
 
